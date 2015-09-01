@@ -8,7 +8,7 @@
 
  [:editor :lt.objs.editor/no-wrap]
  [:editor :lt.objs.style/set-theme "default"]
- [:editor :lt.plugins.rainbow/hide-rainbow-parens]
+ [:editor :lt.plugins.rainbow/show-rainbow-parens]
  [:editor :lt.objs.editor/line-numbers]
 
  [:editor.clojure :lt.objs.langs.clj/print-length 1000]
