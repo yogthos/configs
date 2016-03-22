@@ -13,9 +13,9 @@ Enable it by adding `execute pathogen#infect()` to `.vimrc`
 
 Then clone these into `.vim/bundles/`
 
-https://github.com/tpope/vim-fireplace
-https://github.com/guns/vim-clojure-static
-https://github.com/guns/vim-clojure-highlight
+* https://github.com/tpope/vim-fireplace
+* https://github.com/guns/vim-clojure-static
+* https://github.com/guns/vim-clojure-highlight
 
 Fish extensions
 
