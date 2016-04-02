@@ -1,6 +1,3 @@
-;; Your file has been converted to the new flat format.
-;; Conversion does not preserve comments or indentation.
-;; File is backed up at /Users/Yogthos/Library/Application Support/LightTable/User/user.behaviors.bak
 [
  [:app :lt.objs.style/set-skin "dark"]
  [:app :lt.objs.sidebar.workspace/workspace.open-on-start]
