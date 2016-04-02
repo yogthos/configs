@@ -1,13 +1,8 @@
-;; Your file has been converted to the new flat format.
-;; Conversion does not preserve comments or indentation.
-;; File is backed up at /Users/Yogthos/Library/Application Support/LightTable/User/user.keymap.bak
-[
- [:editor "shift-pmeta-down" :paredit.select.clear]
+[[:editor "shift-pmeta-down" :paredit.select.clear]
  [:editor "alt-shift-w" :editor.watch.unwatch]
  [:editor "alt-s" (:paredit.select.parent "(") :smart-indent-selection :paredit.select.clear]
  [:editor "alt-w" :editor.watch.watch-selection]
  [:editor "alt-enter" (:paredit.select.parent "(") :eval-editor-form :paredit.select.clear]
  [:editor "alt-shift-," :paredit.shrink.right]
  [:editor "shift-pmeta-up" :paredit.select.parent]
- [:editor "alt-shift-." :paredit.grow.right]
-]
+ [:editor "alt-shift-." :paredit.grow.right]]
