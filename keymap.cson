@@ -1,3 +1,6 @@
+'.platform-darwin atom-text-editor[data-grammar~="clojure"]':
+
+
 # Provides proper indentation when enter is pressed
 'atom-text-editor[data-grammar~="clojure"]':
   'enter': 'lisp-paredit:newline'
@@ -10,3 +13,9 @@
 'atom-text-editor[data-grammar~="clojure"], atom-text-editor[data-grammar~="lisp"], atom-text-editor[data-grammar~="newlisp"], atom-text-editor[data-grammar~="racket"], atom-text-editor[data-grammar~="scheme"]':
   'cmd-shift-up': 'lisp-paredit:expand-selection'
   'cmd-shift-down': 'lisp-paredit:contract-selection'
+  'enter':          'lisp-paredit:newline'
+  
+'.platform-darwin atom-workspace atom-text-editor':
+  'ctrl-d': 'proto-repl:exit-repl'
+  'cmd-l':  'go-to-line:toggle'
+  'ctrl-l': 'proto-repl:clear-repl'
