@@ -1,5 +1,5 @@
 if status --is-login
-        set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
+        set -gx JAVA_HOME (/usr/libexec/java_home -v 1.8)
         set -gx PATH $PATH ~/bin $JAVA_HOME ~/bin /usr/local/git/bin
         set -gx NODE_PATH "/usr/local/lib/node_modules"
 end
