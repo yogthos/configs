@@ -12,41 +12,46 @@ First, you need to find your keyboard device. I used my usb keyboard(HHKB).
 With cat `/proc/bus/input/devices` command, you can confirm the information of your keyboard. In my case, the output was like below.
 
 ```
-I: Bus=0003 Vendor=0853 Product=0100 Version=0111
-N: Name="Topre Corporation HHKB Professional"
-P: Phys=usb-0000:00:1d.0-1.8.3.1/input0
-S: Sysfs=/devices/pci0000:00/0000:00:1d.0/usb2/2-1/2-1.8/2-1.8.3/2-1.8.3.1/2-1.8.3.1:1.0/0003:0853:0100.0002/input/input9
+I: Bus=0011 Vendor=0001 Product=0001 Version=ab41
+N: Name="AT Translated Set 2 keyboard"
+P: Phys=isa0060/serio0/input0
+S: Sysfs=/devices/platform/i8042/serio0/input/input0
 U: Uniq=
-H: Handlers=sysrq kbd leds event7 
+H: Handlers=sysrq kbd event0 leds 
 B: PROP=0
 B: EV=120013
-B: KEY=1000000000007 ff9f207ac14057ff febeffdfffefffff fffffffffffffffe
+B: KEY=1100f02902000 8380307cf910f001 feffffdfffefffff fffffffffffffffe
 B: MSC=10
-B: LED=1f
+B: LED=7
 ```
 
-Bus, Vendor, Product and Handlers (event7) will be used in the following steps.
+Bus, Vendor, Product and Handlers (event0) will be used in the following steps.
 2. Find key information
 
-Second, we need to grasp the scancode and the keycode of the key to be remapped. In my case, I wanted to map `RIGHTMETA` key to `HANJA` key (FYI, HANJA key is required in Korean keyboard).
+Second, we need to grasp the scancode and the keycode of the key to be remapped. In my case, I wanted to swap `alt` and `ctrl` keys.
 
-`evtest` program was used to get the key information. If it is not installed in you system, install it with sudo apt install evtest (Ubuntu) or sudo dnf install evtest (Fedora).
+The `evtest` program was used to get the key information.
 
 Running evtest requires an event path as a parameter. The path is something like `/dev/input/eventX` where `X` is the Handler number that we could find in the Section 1. An example of my case follows.
 
-    sudo evtest /dev/input/event7
+    sudo evtest /dev/input/event0
 
 After run `evtest` with proper path, your prompt will waiting your keyboard input. Just type the key that you are interested in. The prompt will show you the information of the key you typed.
 
 ```
-...
-Event: time 1512706221.107613, -------------- SYN_REPORT ------------
-Event: time 1512708889.737079, type 4 (EV_MSC), code 4 (MSC_SCAN), value 700e7
-Event: time 1512708889.737079, type 1 (EV_KEY), code 126 (KEY_RIGHTMETA), value 0
+Event: time 1528092620.744242, type 4 (EV_MSC), code 4 (MSC_SCAN), value 1d
+Event: time 1528092620.744242, type 1 (EV_KEY), code 29 (KEY_LEFTCTRL), value 1
+Event: time 1528092674.425227, type 4 (EV_MSC), code 4 (MSC_SCAN), value 38
+Event: time 1528092674.425227, type 1 (EV_KEY), code 56 (KEY_LEFTALT), value 1
+
+Event: time 1528092695.607297, type 4 (EV_MSC), code 4 (MSC_SCAN), value 9d
+Event: time 1528092695.607297, type 1 (EV_KEY), code 97 (KEY_RIGHTCTRL), value 1
+Event: time 1528092712.270573, type 4 (EV_MSC), code 4 (MSC_SCAN), value b8
+Event: time 1528092712.270573, type 1 (EV_KEY), code 100 (KEY_RIGHTALT), value 
 ...
 ```
 
-Remember the value (`700e7` in my case). It will be used in the next step.
+Remember the values (`1d`, `38`, `9d`, and `b8` in my case). It will be used in the next step.
 3. Write configuration file
 
 Now, you figured out all of your hardware information. It is time to write a configuration file.
@@ -67,62 +72,35 @@ If you want to change all the usb keyboard, use following configuration instead.
 
     keyboard:usb:v*p*
 
-After the device selecting line, key mappings are described.
+The key mappings are described after the device selecting line, and must be indented!
 
 Format:
 
-    KEYBOARD_KEY_<scan_code>=<key_code>
-
-`<scan_code>` is the value we got with `evtest` and `<key_code>` is the lowercase name string of the key to be mapped. You can get the `<key_code>` information in the file `/usr/include/linux/input-event-codes.h` (variables are namded as `KEY_<key code>`).
-evtest also shows the whole key mapping information as below.
-
-```
-Supported events:
-  Event type 0 (EV_SYN)
-  Event type 1 (EV_KEY)
-    Event code 1 (KEY_ESC)
-    Event code 2 (KEY_1)
-    Event code 3 (KEY_2)
-    Event code 4 (KEY_3)
-    Event code 5 (KEY_4)
-    Event code 6 (KEY_5)
-    Event code 7 (KEY_6)
-    Event code 8 (KEY_7)
-    Event code 9 (KEY_8)
-    Event code 10 (KEY_9)
-    Event code 11 (KEY_0)
-    Event code 12 (KEY_MINUS)
-    Event code 13 (KEY_EQUAL)
-    Event code 14 (KEY_BACKSPACE)
-...
-```
-
-Example: `<bus_id>=0003, <vendor_id>=0853, <product_id>=0100, <scan_code>=700e7, <key_code>=hanja`
-
-    evdev:input:b0003v0853p0100*
-     KEYBOARD_KEY_700e7=hanja
-    
+    keyboard:usb:<device_id>  
+     KEYBOARD_KEY_<scan_code>=<key_code>
+  
 complete example:
 
 ```
 evdev:input:*
 keyboard:usb:v*p*
- KEYBOARD_KEY_70038=leftctrl # bind leftalt to leftctrl
- KEYBOARD_KEY_7001d=leftalt # bind leftctrl to leftalt
- KEYBOARD_KEY_700b8=rightctrl # bind righttalt to rightctrl
- KEYBOARD_KEY_7009d=rightalt # bind rightctrl to rightctrl
+ KEYBOARD_KEY_38=leftctrl # bind leftalt to leftctrl
+ KEYBOARD_KEY_1d=leftalt # bind leftctrl to leftalt
+ KEYBOARD_KEY_b8=rightctrl # bind righttalt to rightctrl
+ KEYBOARD_KEY_9d=rightalt # bind rightctrl to rightctr
 ```
 
 You can add more lines of key mappings continuously.
+
 4. Apply your config
 
 After saving the `.hwdb` file, you need to apply the configuration to your system.
 
-1.Update `hwdb.bin` file with the written configuration file.
+1. Update `hwdb.bin` file with the written configuration file.
 
     sudo systemd-hwdb update
 
-2.Reload `hwdb.bin` file to your system.
+2. Reload `hwdb.bin` file to your system.
 
     sudo udevadm trigger
 
