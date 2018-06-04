@@ -100,7 +100,18 @@ Supported events:
 Example: `<bus_id>=0003, <vendor_id>=0853, <product_id>=0100, <scan_code>=700e7, <key_code>=hanja`
 
     evdev:input:b0003v0853p0100*
-    KEYBOARD_KEY_700e7=hanja
+     KEYBOARD_KEY_700e7=hanja
+    
+complete example:
+
+```
+evdev:input:*
+keyboard:usb:v*p*
+ KEYBOARD_KEY_70038=leftctrl # bind leftalt to leftctrl
+ KEYBOARD_KEY_7001d=leftalt # bind leftctrl to leftalt
+ KEYBOARD_KEY_700b8=rightctrl # bind righttalt to rightctrl
+ KEYBOARD_KEY_7009d=rightalt # bind rightctrl to rightctrl
+```
 
 You can add more lines of key mappings continuously.
 4. Apply your config
