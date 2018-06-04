@@ -1,11 +1,6 @@
-
-Intro.
-
 Key mappings can be changed using `xmodmap` in the Xorg layer. Sometimes, it did not work well and mappings should be changed whenever my keyboard was changed. I wanted to change the mapping in the lower level. `udev` gave me a solution.
 
-Reference:
-AtchLinux - Map scancodes to keycodes
-1. Find your device
+#### Find your device
 
 First, you need to find your keyboard device. I used my usb keyboard(HHKB).
 
@@ -26,7 +21,8 @@ B: LED=7
 ```
 
 Bus, Vendor, Product and Handlers (event0) will be used in the following steps.
-2. Find key information
+
+#### Find key information
 
 Second, we need to grasp the scancode and the keycode of the key to be remapped. In my case, I wanted to swap `alt` and `ctrl` keys.
 
@@ -52,7 +48,8 @@ Event: time 1528092712.270573, type 1 (EV_KEY), code 100 (KEY_RIGHTALT), value
 ```
 
 Remember the values (`1d`, `38`, `9d`, and `b8` in my case). It will be used in the next step.
-3. Write configuration file
+
+#### Write the configuration file
 
 Now, you figured out all of your hardware information. It is time to write a configuration file.
 
@@ -92,7 +89,7 @@ keyboard:usb:v*p*
 
 You can add more lines of key mappings continuously.
 
-4. Apply your config
+#### Apply the config
 
 After saving the `.hwdb` file, you need to apply the configuration to your system.
 
@@ -104,7 +101,7 @@ After saving the `.hwdb` file, you need to apply the configuration to your syste
 
     sudo udevadm trigger
 
-5. Confirm the key mapping
+3. Confirm the key mapping
 
 Just check the key works as you wanted, or
 
@@ -114,6 +111,4 @@ or
 
     udevadm info /dev/input/eventX | grep KEYBOARD_KEY
 
-will show the applied key mappings where `eventX` should be yours.
-
-Done.
+will show the applied key mappings where `eventX` should be the one that was set in the config.
