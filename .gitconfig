@@ -1,0 +1,27 @@
+[user]
+	name = Sotnikov, Dmitri
+	email = dmitri.sotnikov@gmail.ca
+[core]
+	excludesfile = ~/.gitignore_global
+[push]
+	default = current
+[branch "master"]
+[pull]
+	default = current
+	rebase = true
+
+[color "diff"]
+  meta = yellow
+  frag = cyan
+  plain = white
+  old = red bold
+  new = green bold
+[color "branch"]
+  current = blue
+  local = normal
+  remote = cyan
+[color "status"]
+  changed = yellow
+  untracked = red
+[alias]
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset (%cr)' --abbrev-commit
