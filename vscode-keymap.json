@@ -1,0 +1,53 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "shift+cmd+up",
+        "command": "paredit.sexpRangeExpansion",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-paredit.sexpRangeExpansion",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "shift+cmd+down",
+        "command": "paredit.sexpRangeContraction",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-paredit.sexpRangeContraction",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "[",
+        "command": "paredit.wrapAroundSquare",
+        "when": "editorHasSelection && editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+[",
+        "command": "-paredit.wrapAroundSquare",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "shift+[",
+        "command": "paredit.wrapAroundCurly",
+        "when": "editorHasSelection && editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+alt+[",
+        "command": "-paredit.wrapAroundCurly",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "shift+9",
+        "command": "paredit.wrapAroundParens",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+alt+9",
+        "command": "-paredit.wrapAroundParens",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    }
+]
