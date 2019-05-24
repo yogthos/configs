@@ -1,0 +1,544 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "escape",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarFocus && activeViewlet == 'workbench.view.search'"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    {
+        "key": "cmd+1",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'"
+    },
+    {
+        "key": "alt+cmd+f",
+        "command": "calva-fmt.alignCurrentForm",
+        "when": "editorTextFocus && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "-calva-fmt.alignCurrentForm",
+        "when": "editorTextFocus && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+    },
+    {
+        "key": "cmd+r",
+        "command": "editor.action.startFindReplaceAction"
+    },
+    {
+        "key": "alt+cmd+f",
+        "command": "-editor.action.startFindReplaceAction"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "-paredit.forwardDownSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+left",
+        "command": "-paredit.backwardSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+right",
+        "command": "-paredit.closeList",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+c ctrl+left",
+        "command": "-paredit.yankBackwardSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+c ctrl+alt+right",
+        "command": "-paredit.yankCloseList",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+c space",
+        "command": "-paredit.yankRangeForDefun",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+c ctrl+down",
+        "command": "-paredit.yankForwardDownSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+c ctrl+right",
+        "command": "-paredit.yankForwardSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+c ctrl+up",
+        "command": "-paredit.yankBackwardUpSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+x ctrl+alt+right",
+        "command": "-paredit.cutCloseList",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+x space",
+        "command": "-paredit.cutRangeForDefun",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "backspace",
+        "command": "-paredit.deleteBackward",
+        "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && paredit:keyMap == 'strict' && editorLangId =~ /clojure|scheme|lisp/"
+    },
+    {
+        "key": "shift+backspace",
+        "command": "-paredit.deleteForward",
+        "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && paredit:keyMap == 'strict' && editorLangId =~ /clojure|scheme|lisp/"
+    },
+    {
+        "key": "shift+cmd+up",
+        "command": "paredit.sexpRangeExpansion",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-paredit.sexpRangeExpansion",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+right",
+        "command": "-paredit.forwardSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+backspace",
+        "command": "-paredit.killSexpBackward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+backspace",
+        "command": "-paredit.killSexpForward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+w space",
+        "command": "-paredit.rangeForDefun",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "shift+cmd+down",
+        "command": "paredit.sexpRangeContraction",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-paredit.sexpRangeContraction",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "-paredit.spliceSexpKillBackward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "-paredit.spliceSexpKillForward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+s",
+        "command": "-paredit.spliceSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+alt+s",
+        "command": "-paredit.splitSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "-paredit.backwardUpSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "shift+alt+backspace",
+        "command": "-deleteRight",
+        "when": "editorTextFocus && !editorReadOnly && paredit:keyMap == 'strict' && editorLangId =~ /clojure|scheme|lisp/"
+    },
+    {
+        "key": "ctrl+alt+backspace",
+        "command": "-deleteLeft",
+        "when": "editorTextFocus && !editorReadOnly && paredit:keyMap == 'strict' && editorLangId =~ /clojure|scheme|lisp/"
+    },
+    {
+        "key": "ctrl+cmd+right",
+        "command": "paredit.barfSexpBackward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+alt+,",
+        "command": "-paredit.barfSexpBackward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+cmd+left",
+        "command": "paredit.barfSexpForward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+,",
+        "command": "-paredit.barfSexpForward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "alt+cmd+left",
+        "command": "paredit.slurpSexpBackward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+alt+.",
+        "command": "-paredit.slurpSexpBackward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "paredit.slurpSexpForward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+.",
+        "command": "-paredit.slurpSexpForward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "-editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+alt+v p",
+        "command": "-calva.evaluateSelectionPrettyPrint"
+    },
+    {
+        "key": "ctrl+alt+v r",
+        "command": "-calva.evaluateSelectionReplace"
+    },
+    {
+        "key": "ctrl+alt+v l",
+        "command": "-calva.lintFile"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-calva-fmt.tabDedent",
+        "when": "editorTextFocus && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-calva-fmt.tabIndent",
+        "when": "editorTextFocus && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "-calva-fmt.inferParens",
+        "when": "editorTextFocus && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
+    },
+    {
+        "key": "ctrl+alt+v alt+e",
+        "command": "-calva.evalCurrentFormInREPLTerminal"
+    },
+    {
+        "key": "ctrl+alt+v e",
+        "command": "-calva.evaluateSelection"
+    },
+    {
+        "key": "ctrl+alt+v ctrl+alt+p",
+        "command": "-calva.evaluateCurrentTopLevelFormPrettyPrint"
+    },
+    {
+        "key": "ctrl+alt+v s",
+        "command": "-calva.selectCurrentForm"
+    },
+    {
+        "key": "[",
+        "command": "paredit.wrapAroundSquare",
+        "when": "editorHasSelection && editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+[",
+        "command": "-paredit.wrapAroundSquare",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "shift+[",
+        "command": "paredit.wrapAroundCurly",
+        "when": "editorHasSelection && editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+alt+[",
+        "command": "-paredit.wrapAroundCurly",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "calva.evaluateCurrentTopLevelForm"
+    },
+    {
+        "key": "ctrl+alt+v space",
+        "command": "-calva.evaluateCurrentTopLevelForm"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "calva.evalCurrentTopLevelFormInREPLTerminal",
+        "when": "activePanel == 'workbench.panel.terminal'"
+    },
+    {
+        "key": "ctrl+r cmd+enter",
+        "command": "calva.evalCurrentTopLevelFormInREPLTerminal"
+    },
+    {
+        "key": "ctrl+alt+v alt+space",
+        "command": "-calva.evalCurrentTopLevelFormInREPLTerminal"
+    },
+    {
+        "key": "ctrl+alt+v enter",
+        "command": "-calva.evaluateFile"
+    },
+    {
+        "key": "ctrl+alt+v z",
+        "command": "-calva.openREPLTerminal"
+    },
+    {
+        "key": "ctrl+alt+v alt+n",
+        "command": "-calva.loadNamespace"
+    },
+    {
+        "key": "ctrl+alt+v shift+c",
+        "command": "-calva.reconnect"
+    },
+    {
+        "key": "ctrl+r c",
+        "command": "calva.connect"
+    },
+    {
+        "key": "ctrl+alt+v c",
+        "command": "-calva.connect"
+    },
+    {
+        "key": "ctrl+r cmd+c",
+        "command": "calva.copyLastResults"
+    },
+    {
+        "key": "ctrl+alt+v ctrl+c",
+        "command": "-calva.copyLastResults"
+    },
+    {
+        "key": "ctrl+r shift+t",
+        "command": "calva.runAllTests"
+    },
+    {
+        "key": "ctrl+alt+v shift+t",
+        "command": "-calva.runAllTests"
+    },
+    {
+        "key": "ctrl+r ctrl+t",
+        "command": "calva.rerunTests"
+    },
+    {
+        "key": "ctrl+alt+v ctrl+t",
+        "command": "-calva.rerunTests"
+    },
+    {
+        "key": "ctrl+r t",
+        "command": "calva.runNamespaceTests"
+    },
+    {
+        "key": "ctrl+alt+v t",
+        "command": "-calva.runNamespaceTests"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "calva.setREPLNamespace",
+        "when": "activePanel == 'workbench.panel.terminal'"
+    },
+    {
+        "key": "ctrl+alt+v n",
+        "command": "-calva.setREPLNamespace"
+    },
+    {
+        "key": "ctrl+r ctrl+r",
+        "command": "calva.recreateCljsRepl"
+    },
+    {
+        "key": "ctrl+alt+v ctrl+r",
+        "command": "-calva.recreateCljsRepl"
+    },
+    {
+        "key": "shift+9",
+        "command": "paredit.wrapAroundParens",
+        "when": "editorTextFocus && editorHasSelection && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+alt+9",
+        "command": "-paredit.wrapAroundParens",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+right",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "shift+cmd+]",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "shift+cmd+[",
+        "command": "-workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+left",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "alt+cmd+left",
+        "command": "-workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.openPreviousRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "-workbench.action.quickOpenNavigatePreviousInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
+    },
+    {
+        "key": "cmd+k e",
+        "command": "-workbench.files.action.focusOpenEditorsView",
+        "when": "workbench.explorer.openEditorsView.active"
+    },
+    {
+        "key": "shift+cmd+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "shift+cmd+o",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+1",
+        "command": "workbench.view.explorer",
+        "when": "activeViewlet != 'workbench.view.explorer'"
+    },
+    {
+        "key": "shift+cmd+e",
+        "command": "-workbench.view.explorer"
+    },
+    {
+        "key": "cmd+1",
+        "command": "-workbench.action.focusFirstEditorGroup"
+    },
+    {
+        "key": "ctrl+r ctrl+c",
+        "command": "calva.toggleCLJCSession"
+    },
+    {
+        "key": "ctrl+alt+v alt+c",
+        "command": "-calva.toggleCLJCSession"
+    },
+    {
+        "key": "cmd+0",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "cmd+0",
+        "command": "-workbench.action.focusSideBar"
+    },
+    {
+        "key": "ctrl+r r",
+        "command": "calva.openREPLTerminal"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-workbench.action.terminal.findPrevious",
+        "when": "terminalFindWidgetFocused"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-editor.action.previousMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-workbench.action.terminal.findPreviousTerminalFocus",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "workbench.action.replaceInFiles"
+    },
+    {
+        "key": "shift+cmd+h",
+        "command": "-workbench.action.replaceInFiles"
+    },
+    {
+        "key": "cmd+y",
+        "command": "redo",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+z",
+        "command": "-redo",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+y",
+        "command": "editor.action.webvieweditor.redo",
+        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
+    },
+    {
+        "key": "shift+cmd+z",
+        "command": "-editor.action.webvieweditor.redo",
+        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
+    }
+]

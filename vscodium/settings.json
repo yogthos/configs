@@ -1,0 +1,32 @@
+{
+    "calva.fmt.allgnMapItems": true,
+    "calva.fmt.newIndentEngine": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "files.autoSave": "onFocusChange",
+    "editor.dragAndDrop": false,
+    "editor.emptySelectionClipboard": false,
+    "editor.formatOnPaste": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "search.exclude": {
+        "*.log": true
+    },
+    "terminal.integrated.confirmOnExit": true,
+    "calva.autoConnect": false,
+    "workbench.activityBar.visible": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "constant",
+                    "constant.keyword"
+                ],
+                "settings": {
+                    "foreground": "#b8ad1a"
+                }
+            }
+        ]
+    },
+    "workbench.colorTheme": "Cyberpunk"
+}
