@@ -28,5 +28,9 @@
             }
         ]
     },
-    "workbench.colorTheme": "Cyberpunk"
+    "workbench.colorTheme": "Cyberpunk",
+    "editor.renderControlCharacters": false,
+    "editor.wordWrap": "on",
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.matchBrackets": false
 }
