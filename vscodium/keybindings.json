@@ -315,10 +315,6 @@
         "command": "-calva.openREPLTerminal"
     },
     {
-        "key": "ctrl+alt+v alt+n",
-        "command": "-calva.loadNamespace"
-    },
-    {
         "key": "ctrl+alt+v shift+c",
         "command": "-calva.reconnect"
     },
@@ -542,6 +538,10 @@
         "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
     },
     {
+        "key": "cmd+enter",
+        "command": "calva.evalCurrentTopLevelFormInREPLWindow"
+    },
+    {
         "key": "ctrl+shift+f",
         "command": "workbench.view.search",
         "when": "!searchViewletVisible"
@@ -552,7 +552,21 @@
         "when": "!searchViewletVisible"
     },
     {
+        "key": "ctrl+shift+f",
+        "command": "workbench.action.findInFiles"
+    },
+    {
         "key": "shift+cmd+f",
         "command": "-workbench.action.findInFiles"
+    },
+    {
+        "key": "cmd+w",
+        "command": "-workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups"
+    },
+    {
+        "key": "cmd+w",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
     }
 ]
