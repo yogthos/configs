@@ -2,7 +2,7 @@
     "calva.fmt.allgnMapItems": true,
     "calva.fmt.newIndentEngine": true,
     "workbench.startupEditor": "newUntitledFile",
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
     "breadcrumbs.enabled": true,
     "files.autoSave": "onFocusChange",
     "editor.dragAndDrop": false,
@@ -32,5 +32,9 @@
     "editor.renderControlCharacters": false,
     "editor.wordWrap": "on",
     "editor.copyWithSyntaxHighlighting": false,
-    "editor.matchBrackets": false
+    "editor.matchBrackets": false,
+    "calva.openBrowserWhenFigwheelStarted": false,
+    "calva.fmt.removeConsecutiveBlankLines": true,
+    "clojureVSCode.autoStartNRepl": false,
+    "editor.fontSize": 14
 }

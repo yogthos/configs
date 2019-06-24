@@ -16,7 +16,7 @@
         "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'"
     },
     {
-        "key": "alt+cmd+f",
+        "key": "shift+cmd+f",
         "command": "calva-fmt.alignCurrentForm",
         "when": "editorTextFocus && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
     },
@@ -540,5 +540,19 @@
         "key": "shift+cmd+z",
         "command": "-editor.action.webvieweditor.redo",
         "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "workbench.view.search",
+        "when": "!searchViewletVisible"
+    },
+    {
+        "key": "shift+cmd+f",
+        "command": "-workbench.view.search",
+        "when": "!searchViewletVisible"
+    },
+    {
+        "key": "shift+cmd+f",
+        "command": "-workbench.action.findInFiles"
     }
 ]
