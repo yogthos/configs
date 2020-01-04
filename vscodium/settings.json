@@ -24,6 +24,15 @@
                 ],
                 "settings": {
                     "foreground": "#b8ad1a"
+                },
+            },
+            {
+                "scope": [
+                    "constant.keyword.clojure",
+                    "constant.keyword.fennel"
+                ],
+                "settings": {
+                    "foreground": "#9cdcfeff"
                 }
             }
         ]
@@ -37,4 +46,6 @@
     "calva.openBrowserWhenFigwheelStarted": false,
     "calva.fmt.removeConsecutiveBlankLines": true,
     "clojureVSCode.autoStartNRepl": false,
-    "editor.fontSize": 14}
+    "editor.fontSize": 14,
+    "clojureVSCode.formatOnSave": false
+}
