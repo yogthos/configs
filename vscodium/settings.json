@@ -41,7 +41,7 @@
     "editor.renderControlCharacters": false,
     "editor.wordWrap": "on",
     "editor.copyWithSyntaxHighlighting": false,
-    "editor.matchBrackets": false,
+    "editor.matchBrackets": "never",
     "calva.syncReplNamespaceToCurrentFile": true,
     "calva.openBrowserWhenFigwheelStarted": false,
     "calva.fmt.removeConsecutiveBlankLines": true,
