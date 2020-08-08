@@ -1,8 +1,0 @@
-[[:editor "shift-pmeta-down" :paredit.select.clear]
- [:editor "alt-shift-w" :editor.watch.unwatch]
- [:editor "alt-s" (:paredit.select.parent "(") :smart-indent-selection :paredit.select.clear]
- [:editor "alt-w" :editor.watch.watch-selection]
- [:editor "alt-enter" (:paredit.select.parent "(") :eval-editor-form :paredit.select.clear]
- [:editor "alt-shift-," :paredit.shrink.right]
- [:editor "shift-pmeta-up" :paredit.select.parent]
- [:editor "alt-shift-." :paredit.grow.right]]
