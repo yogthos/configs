@@ -6,4 +6,4 @@ and comment out `nvidia-drm modeset=1`
 
 run `sudo update-initramfs -u`
 
-reboot
+Reboot. After the reboot, check whether `sudo cat /sys/module/nvidia_drm/parameters/modeset` outputs a `N`.
