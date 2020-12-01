@@ -35,3 +35,18 @@ kernelstub           : INFO     Configuration details:
    Install Loader configuration:..True
    Configuration version:.........3
    ```
+ disabling sleep
+ 
+ ```
+ #can be a combination of these
+ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+ 
+ #enable the changes
+ sudo systemctl restart systemd-logind.service
+   
+ #check status
+ systemctl status sleep.target suspend.target hibernate.target hybrid-sleep.target
+ 
+ #enable sleep
+ systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target
+ ```
