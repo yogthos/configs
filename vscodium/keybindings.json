@@ -381,7 +381,7 @@
         "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
     },
     {
-        "key": "ctrl+right",
+        "key": "cmd+right",
         "command": "workbench.action.nextEditor"
     },
     {
@@ -569,5 +569,19 @@
         "key": "cmd+enter",
         "command": "-debug.openBreakpointToSide",
         "when": "breakpointsFocused"
+    },
+    {
+        "key": "shift+f6",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+left",
+        "command": "workbench.action.previousEditor"
     }
 ]
