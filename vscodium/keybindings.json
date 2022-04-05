@@ -381,7 +381,7 @@
         "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
     },
     {
-        "key": "shift+cmd+right",
+        "key": "alt+cmd+right",
         "command": "workbench.action.nextEditor"
     },
     {
@@ -577,7 +577,7 @@
         "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
     {
-        "key": "shift+cmd+left",
+        "key": "alt+cmd+left",
         "command": "workbench.action.previousEditor"
     }
 ]
