@@ -287,8 +287,11 @@
     },
     {
         "key": "cmd+enter",
-        "command": "calva.evalCurrentTopLevelFormInREPLTerminal",
-        "when": "activePanel == 'workbench.panel.terminal'"
+        "command": "calva.evaluateCurrentTopLevelForm"
+    },
+    {
+        "key": "ctrl+alt+v space",
+        "command": "-calva.evaluateCurrentTopLevelForm"
     },
     {
         "key": "ctrl+r cmd+enter",
@@ -378,7 +381,7 @@
         "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
     },
     {
-        "key": "ctrl+right",
+        "key": "alt+cmd+right",
         "command": "workbench.action.nextEditor"
     },
     {
@@ -392,10 +395,6 @@
     {
         "key": "shift+cmd+[",
         "command": "-workbench.action.previousEditor"
-    },
-    {
-        "key": "ctrl+left",
-        "command": "workbench.action.previousEditor"
     },
     {
         "key": "alt+cmd+left",
@@ -530,10 +529,6 @@
         "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
     },
     {
-        "key": "cmd+enter",
-        "command": "calva.evalCurrentTopLevelFormInREPLWindow"
-    },
-    {
         "key": "ctrl+shift+f",
         "command": "workbench.view.search",
         "when": "!searchViewletVisible"
@@ -562,68 +557,28 @@
         "when": "activeEditorGroupEmpty && multipleEditorGroups"
     },
     {
-        "key": "ctrl+enter",
-        "command": "-explorer.openToSide",
-        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-    },
-    {
-        "key": "ctrl+enter",
-        "command": "-openReferenceToSide",
-        "when": "referenceSearchTreeFocused && referenceSearchVisible"
-    },
-    {
-        "key": "ctrl+enter",
-        "command": "-problems.action.openToSide",
-        "when": "problemFocus"
-    },
-    {
-        "key": "ctrl+enter",
-        "command": "-search.action.openResultToSide",
-        "when": "fileMatchOrMatchFocus && searchViewletVisible"
-    },
-    {
-        "key": "shift+alt+r",
-        "command": "calva.openCljReplWindow"
-    },
-    {
-        "key": "cmd+left",
-        "command": "-paredit.backwardSexp",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "cmd+right",
-        "command": "-paredit.forwardSexp",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "cmd+w",
-        "command": "-paredit.sexpRangeExpansion",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+w",
-        "command": "-paredit.sexpRangeExpansion",
-        "when": "calva:replWindowActive || editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/"
-    },
-    {
-        "key": "cmd+enter",
-        "command": "calva.sendCurrentFormToOutputWindow",
+        "key": "ctrl+alt+c ctrl+alt+space",
+        "command": "-calva.sendCurrentTopLevelFormToOutputWindow",
         "when": "calva:connected && calva:keybindingsEnabled && !calva:outputWindowActive && editorLangId == 'clojure'"
     },
     {
-        "key": "ctrl+enter",
-        "command": "-calva.evaluateSelection",
-        "when": "calva:connected && calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure'"
-    },
-    {
         "key": "cmd+enter",
-        "command": "calva.evaluateCurrentTopLevelForm",
-        "when": "calva:connected && calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure'"
+        "command": "-debug.openBreakpointToSide",
+        "when": "breakpointsFocused"
     },
     {
-        "key": "alt+enter",
-        "command": "-calva.evaluateCurrentTopLevelForm",
-        "when": "calva:connected && calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure'"
+        "key": "shift+f6",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+cmd+left",
+        "command": "workbench.action.previousEditor"
     },
     {
         "key": "ctrl+cmd+enter",
