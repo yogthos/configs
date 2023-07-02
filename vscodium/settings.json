@@ -47,5 +47,7 @@
     "calva.fmt.removeConsecutiveBlankLines": true,
     "clojureVSCode.autoStartNRepl": false,
     "editor.fontSize": 14,
-    "clojureVSCode.formatOnSave": false
+    "clojureVSCode.formatOnSave": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false
 }
