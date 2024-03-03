@@ -68,7 +68,9 @@ steam \
 macdown \
 google-drive \
 cleanmymac \
-iterm2
+iterm2 \
+fish \
+atuin
 
 @echo "Cleaning Up Cask Files"
 sudo brew cask cleanup
